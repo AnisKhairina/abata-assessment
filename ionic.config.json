@@ -1,0 +1,7 @@
+{
+  "name": "abata-assessment",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
