@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cat Listing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cat Listing</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+<ion-grid class="custom-table">
+  <ion-row class="table-header">
+    <ion-col class="header-cell">Breed</ion-col>
+    <ion-col class="header-cell">Country</ion-col>
+    <ion-col class="header-cell">Origin</ion-col>
+    <ion-col class="header-cell">Coat</ion-col>
+    <ion-col class="header-cell">Pattern</ion-col>
+  </ion-row>
+  <ion-row class="table-row" *ngFor="let item of cats">
+    <ion-col data-label="Breed">{{item.breed}}</ion-col>
+    <ion-col data-label="Country">{{item.country}}</ion-col>
+    <ion-col data-label="Origin">{{item.origin}}</ion-col>
+    <ion-col data-label="Coat">{{item.coat}}</ion-col>
+    <ion-col data-label="Pattern">{{item.pattern}}</ion-col>
+  </ion-row>
+</ion-grid>

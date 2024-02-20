@@ -1,0 +1,30 @@
+.custom-table {
+  width: 95%;
+}
+
+.table-header {
+  font-weight: bold;
+}
+
+.table-header .header-cell {
+  padding: 10px;
+  border: 1px solid #000000;
+  background-color: #d6d0c8;
+  text-align: center;
+}
+
+.table-row:nth-child(even) {
+  background-color: #d6d0c8;
+}
+
+.table-row .ion-col {
+  padding: 10px;
+}
+
+.table-row .ion-col:first-child {
+  border-left: none;
+}
+
+.table-row .ion-col:last-child {
+  border-right: none;
+}
