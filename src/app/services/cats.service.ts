@@ -17,5 +17,7 @@ export class CatsService {
     return this.http.get<ApiResult>(`${BASE_URL}?page=${page}`);
   }
 
-  getCatsDetails() {}
+  getAllCats(): Observable<ApiResult>{
+    return this.http.get<ApiResult>(`${BASE_URL}?limit=98`)
+  }
 }

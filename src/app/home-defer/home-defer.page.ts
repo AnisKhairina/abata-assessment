@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { CatsService } from '../services/cats.service';
-import { Cat  } from '../services/interfaces';
+import { Cat, Link } from '../services/interfaces';
 
 @Component({
   selector: 'app-home-defer',
@@ -12,21 +12,42 @@ import { Cat  } from '../services/interfaces';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
+
 export class HomeDeferPage implements OnInit {
   private catsService = inject(CatsService)
   private currentPage = 1;
-  private error = null;
   public cats:Cat[] = [];
+  public link:Link[] = [];
+  public allCats:Cat[] = []; 
+  public searchText = '';
 
-  constructor() { 
-    
-  }
+  constructor() {}
 
   loadCats(page: number){
     this.catsService.getCats(this.currentPage).subscribe((data) => {
       this.cats = data.data;
       this.currentPage = data.current_page;
+      this.link = data.links;
     })
+
+    this.catsService.getAllCats().subscribe((data) => {
+      this.allCats = data.data;
+    })
+  }
+
+  searchCats(){
+    this.cats = this.allCats.filter(cat => cat.breed.toLowerCase().includes(this.searchText.toLowerCase()))
+  }
+
+  handleClick(label:string) {
+    if (label === 'Next'){
+      this.currentPage++;
+    } else if (label === 'Previous'){
+      this.currentPage--;
+    } else {
+      this.currentPage = parseInt(label);
+    }
+    this.loadCats(this.currentPage);
   }
 
   ngOnInit() {

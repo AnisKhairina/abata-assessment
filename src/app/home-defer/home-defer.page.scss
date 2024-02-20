@@ -1,3 +1,4 @@
+//Table
 .custom-table {
   width: 95%;
 }
@@ -40,14 +41,24 @@ ion-searchbar{
   --clear-button-color: #fff;
   --border-radius: 10px;
   width: 50%;
-  height: 100px;
   margin-left: 300px;
+  margin-bottom: 0;
 }
 
-ion-searchbar.ios.custom {
-  --cancel-button-color: #19422d;
+ion-item{
+  width: 30%;
+  margin-left: 300px;
+  margin-bottom: 20px;
 }
 
-ion-searchbar.md.custom {
-  --cancel-button-color: #fff;
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-button {
+  --background: #818181;
 }

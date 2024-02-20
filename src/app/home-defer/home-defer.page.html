@@ -11,7 +11,22 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-searchbar show-clear-button="always" clear-icon="trash-bin"></ion-searchbar>
+  <ion-searchbar show-clear-button="always" clear-icon="trash-bin" [(ngModel)] = "searchText" (ionChange) = "searchCats()"></ion-searchbar>
+  <ion-item>
+    <ion-select
+      class="always-flip"
+      toggleIcon="caret-down-sharp"
+      interface="popover"
+      label="Search by"
+      placeholder="Select data"
+    >
+      <ion-select-option value="breed">Breed</ion-select-option>
+      <ion-select-option value="country">Country</ion-select-option>
+      <ion-select-option value="origin">Origin</ion-select-option>
+      <ion-select-option value="coat">Coat</ion-select-option>
+      <ion-select-option value="pattern">Pattern</ion-select-option>
+    </ion-select>
+  </ion-item>
 
   <ion-grid class="custom-table">
     <ion-row class="table-header">
@@ -29,4 +44,10 @@
       <ion-col data-label="Pattern">{{item.pattern}}</ion-col>
     </ion-row>
   </ion-grid>
+
+  <div class="card-container">
+    <ion-card *ngFor="let item of link" (click)="handleClick(item.label)">
+      <ion-button size="small">{{item.label}}</ion-button>
+    </ion-card>
+  </div>
 </ion-content>
