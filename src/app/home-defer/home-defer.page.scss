@@ -1,22 +1,49 @@
 //Table
 .custom-table {
   width: 95%;
-}
+  background: rgba(131, 131, 131, 0.108);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:  20px 20px 60px rgba(0, 0, 0, 0.2),
+              -20px -20px 60px rgba(255, 255, 255, 0.2);
 
+}
 .table-header {
   font-weight: bold;
   background-color: #d6d0c8;
 }
 
+ion-chip {
+  --background: #00213f;
+  --color: #adefd1;
+}
+
+ion-content {
+  --background: url('https://img.freepik.com/free-vector/minimal-cat-background-line-art-illustration-vector_53876-151371.jpg')  center center / cover;
+}
+
 .table-header .header-cell {
   padding: 10px;
   border: 1px solid #000000;
-  background-color: #a39a8e;
+  background-color: #c2b7a8;
   text-align: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
 }
 
 .table-row:nth-child(even) {
-  background-color: #d6d0c8;
+  background-color: #ded0c0;
+  border-radius: 5px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .table-row .ion-col {
@@ -32,23 +59,29 @@
 }
 
 
+
 //search
-ion-searchbar{
-  --background: #818181;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-searchbar {
+  --background: #9f9282;
   --color: #fff;
   --placeholder-color: #fff;
   --icon-color: #fff;
   --clear-button-color: #fff;
   --border-radius: 10px;
-  width: 50%;
-  margin-left: 300px;
-  margin-bottom: 0;
+  width: 30%;
 }
 
 ion-item{
-  width: 30%;
-  margin-left: 300px;
-  margin-bottom: 20px;
+  width: 15%;
+  border-radius: 10px;
+  --background: #d6c3ad;
+  height: 45px;
 }
 
 .card-container {
@@ -60,5 +93,5 @@ ion-item{
 }
 
 ion-button {
-  --background: #818181;
+  --background: #9f9282;
 }

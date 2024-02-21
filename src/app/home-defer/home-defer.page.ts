@@ -20,6 +20,7 @@ export class HomeDeferPage implements OnInit {
   public link:Link[] = [];
   public allCats:Cat[] = []; 
   public searchText = '';
+  public selectedOption = '';
 
   constructor() {}
 
@@ -36,7 +37,39 @@ export class HomeDeferPage implements OnInit {
   }
 
   searchCats(){
-    this.cats = this.allCats.filter(cat => cat.breed.toLowerCase().includes(this.searchText.toLowerCase()))
+    if(this.selectedOption === 'breed'){
+      this.cats =  this.allCats.filter(cat => 
+        cat.breed.toLowerCase()
+        .includes(this.searchText.toLowerCase()));
+    }else if(this.selectedOption === 'country'){
+      this.cats =  this.allCats.filter(cat => 
+        cat.country.toLowerCase()
+        .includes(this.searchText.toLowerCase()));
+    }else if (this.selectedOption === 'origin'){
+      this.cats =  this.allCats.filter(cat => 
+        cat.origin.toLowerCase()
+        .includes(this.searchText.toLowerCase()));
+    }else if(this.selectedOption === 'coat'){
+      this.cats =  this.allCats.filter(cat => 
+        cat.coat.toLowerCase()
+        .includes(this.searchText.toLowerCase()));
+  }else if(this.selectedOption === 'pattern'){
+    this.cats =  this.allCats.filter(cat => 
+      cat.pattern.toLowerCase()
+      .includes(this.searchText.toLowerCase()));
+  }else {
+    this.cats =  this.allCats.filter(cat => 
+      cat.breed.toLowerCase()
+      .includes(this.searchText.toLowerCase()) ||
+      cat.country.toLowerCase()
+      .includes(this.searchText.toLowerCase()) ||
+      cat.origin.toLowerCase()
+        .includes(this.searchText.toLowerCase()) ||
+      cat.coat.toLowerCase()
+      .includes(this.searchText.toLowerCase()) ||
+      cat.pattern.toLowerCase()
+      .includes(this.searchText.toLowerCase()));  
+    }
   }
 
   handleClick(label:string) {
