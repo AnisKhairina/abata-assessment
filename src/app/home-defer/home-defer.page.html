@@ -12,7 +12,7 @@
   </ion-header>
 
   <div class="container">
-    <ion-searchbar show-clear-button="always" clear-icon="trash-bin" [(ngModel)] = "searchText" (ionChange) = "searchCats()"></ion-searchbar>
+    <ion-searchbar [(ngModel)] = "searchText" (ionChange) = "searchCats()"></ion-searchbar>
   
     <ion-item>
       <ion-select
